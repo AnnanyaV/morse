@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <title>Morse</title>
+
+    <style>
+      .navbar {
+        min-height: 85px;
+      }
+        .none {
+            -webkit-filter: none;
+            filter: none;
+        }
+
+        .blur {
+            -webkit-filter: blur(3px);
+            filter: blur(3px);
+        }
+
+        .grayscale {
+            -webkit-filter: grayscale(1);
+            filter: grayscale(1);
+        }
+
+        .invert {
+            -webkit-filter: invert(1);
+            filter: invert(1);
+        }
+
+        .sepia {
+            -webkit-filter: sepia(1);
+            filter: sepia(1);
+        }
+
+        button#snapshot {
+            margin: 0 10px 25px 0;
+            width: 110px;
+        }
+
+        video {
+            object-fit: cover;
+        }
+
+    }
+    
+    </style>
+
+    </head>
+
+<body>
+    <!-- NavBar -->
+<nav class="navbar navbar-light bg-dark height">
+  <a class="navbar-brand text-light" href="#">
+    MORSE
+  </a>
+</nav>
+<div class="container-fluid ">
+<div class="col py-md-3">
+<h1> Media Recording</h1>
+<br>
+<br>
+<div>
+        <button id="start">Start camera</button>
+        <button id="record" disabled>Start Recording</button>
+        <button id="play" disabled>Play</button>
+        <button id="download" disabled>Download</button>
+    </div>
+
+<div>
+        <div class="col py-md-3">
+        <h4>Constraints options</h4>
+        <p>Echo cancellation: <input type="checkbox" id="echoCancellation"></p>
+        </div>
+    </div>
+
+<div class="col py-md-3">
+    <label for="filter">Filter: </label>
+    <select id="filter">
+        <option value="none">None</option>
+        <option value="blur">Blur</option>
+        <option value="grayscale">Grayscale</option>
+        <option value="invert">Invert</option>
+        <option value="sepia">Sepia</option>
+    </select>
+</div>
+    <br>
+    <br>
+    <div id="buttons">
+        <button class= "shadow p-2 mb-4 bg-dark text-light "id="qvga">QVGA</button>
+        <button class= "shadow p-2 mb-4 bg-dark text-light " id="vga">VGA</button>
+        <button class= "shadow p-2 mb-4 bg-dark text-light "id="hd">HD</button>
+        <button class= "shadow p-2 mb-4 bg-dark text-light "id="full-hd">Full HD</button>
+        <button class= "shadow p-2 mb-4 bg-dark text-light "id="fourK">4K</button>
+        <button class= "shadow p-2 mb-4 bg-dark text-light "id="eightK">8K</button>
+    </div>
+
+
+
+<div class="row">
+<div class="col px-md-5 col py-md-5">
+
+    <video id="gum" playsinline autoplay muted></video>
+</div>
+<div class="col px-md-5 col py-md-5">
+    <video id="recorded" playsinline loop></video>
+
+</div>
+</div>
+
+    </div>
+
+    <div>
+        <span id="errorMsg"></span>
+    </div>
+</div>
+<script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
+<script src="main.js" async></script>
+<!--<script src="../../../js/lib/ga.js"></script>-->
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>
