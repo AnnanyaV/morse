@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="toolbar.css">
+    <title>Morse</title>
+  </head>
+
+  <body>
+    <!-- NavBar -->
+
+    <nav class="navbar navbar-light bg-dark height">
+      <a class="navbar-brand text-light" href="#">
+        MORSE
+      </a>
+    </nav>
+    <div class="container">
+      <div class="col py-md-3">
+        <h1>Media Recording</h1>
+        <br />
+        <br />
+      
+        <button id= "camera" >Camera</button>
+        
+        <button id= "screen">Screen</button>
+
+        <button id="pipButton" disabled>Picture in picture</button><br><br>
+
+        <h2>Camera and Screen</h2><br>
+
+        <button id= "camscreen">Camera and Screen</button>
+        
+        <button id= "cam_and_screen" disabled>Start Camera and Screen</button>
+    
+
+        <div class="select mt-5">
+        <label for="audioSource">Audio input source: </label><select id="audioSource"></select>
+    </div>
+
+    <div class="select">
+        <label for="audioOutput">Audio output destination: </label><select id="audioOutput"></select>
+    </div>
+
+    <div class="select">
+        <label for="videoSource">Video source: </label><select id="videoSource"></select>
+    </div>
+
+    <div class="col py-md-3">
+          <label for="filter">Filter: </label>
+          <select id="filter">
+            <option value="none">None</option>
+            <option value="blur">Blur</option>
+            <option value="grayscale">Grayscale</option>
+            <option value="invert">Invert</option>
+            <option value="sepia">Sepia</option>
+          </select>
+        </div>
+
+
+        <div id="buttons">
+        <button id="vga">VGA</button>
+        <button id="hd">HD</button>
+        <button id="full-hd">Full HD</button>
+        </div>
+        
+
+
+    
+
+        <div class="row vid">
+            <div class="col py-4">
+              <video controls autoplay playsinline></video>
+              <video id="video2" controls autoplay playsinline></video>
+            </div>
+          </div>
+
+
+  
+        <div>
+          <button id="btn-start-recording" disabled>Start Recording</button>
+          <button id="btn-stop-recording" disabled>Stop Recording</button>
+          <button id="resume" disabled> Resume</button>
+          <button id="pause" disabled>Pause</button>
+        </div>
+
+        <div>
+          <div class="col py-md-3">
+            <p>
+              Echo cancellation: <input type="checkbox" id="echoCancellation" />
+            </p>
+          </div>
+        </div>
+
+        
+
+
+    
+
+
+        
+
+      <div>
+        <span id="errorMsg"></span>
+      </div>
+    </div>
+
+    <footer style="margin-top: 20px;"><small id="send-message"></small></footer>
+<script src="https://www.webrtc-experiment.com/common.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/RecordRTC/5.6.1/RecordRTC.js"></script>
+<script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
+ 
+ <script src="toolbar.js" async></script>
+
+</script>
+  </body>
+</html>
